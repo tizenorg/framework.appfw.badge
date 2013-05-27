@@ -71,7 +71,7 @@ chown :5000 %{DBDIR}/.%{name}.db
 chown :5000 %{DBDIR}/.%{name}.db-journal
 chmod 660 %{DBDIR}/.%{name}.db
 chmod 660 %{DBDIR}/.%{name}.db-journal
-if [ -f /usr/lib/rpm-plugins/msm.so ]
+if [ -f %{_libdir}/rpm-plugins/msm.so ]
 then
     chsmack -a 'badge::db' %{DBDIR}/.%{name}.db*
 fi
