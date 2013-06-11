@@ -1,7 +1,7 @@
 %define DBDIR "/opt/dbspace"
 Name:       badge
 Summary:    badge library
-Version:    0.0.5
+Version:    0.0.8
 Release:    1
 Group:      TBD
 License:    Apache-2.0
@@ -69,8 +69,8 @@ fi
 
 chown :5000 %{DBDIR}/.%{name}.db
 chown :5000 %{DBDIR}/.%{name}.db-journal
-chmod 660 %{DBDIR}/.%{name}.db
-chmod 660 %{DBDIR}/.%{name}.db-journal
+chmod 640 %{DBDIR}/.%{name}.db
+chmod 640 %{DBDIR}/.%{name}.db-journal
 if [ -f /usr/lib/rpm-plugins/msm.so ]
 then
     chsmack -a 'badge::db' %{DBDIR}/.%{name}.db*

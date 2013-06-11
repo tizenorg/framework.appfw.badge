@@ -802,6 +802,9 @@ badge_error_e _badget_get_display(const char *pkgname, unsigned int *is_display)
 
 	ret = _badge_check_option_inserted(pkgname, db);
 	if (ret != BADGE_ERROR_ALREADY_EXIST) {
+		if (ret == BADGE_ERROR_NOT_EXIST) {
+			*is_display = 1;
+		}
 		result = ret;
 		goto return_close_db;
 	}
